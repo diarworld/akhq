@@ -20,15 +20,19 @@
 # generate a heap dump when an allocation from the Java heap fails
 # heap dumps are created in the working directory of the JVM
 -XX:+HeapDumpOnOutOfMemoryError
--XX:HeapDumpPath=/tmp/heapdump.log
+-XX:HeapDumpPath=/app/heapdump.log
 
 # Do not rely on the system configuration
 -Dfile.encoding=UTF-8
--Duser.timezone=UTC
+-Duser.timezone=GMT+3
 
 # Jmx Remote
--Dcom.sun.management.jmxremote
--Dcom.sun.management.jmxremote.port=8686
--Dcom.sun.management.jmxremote.local.only=false
--Dcom.sun.management.jmxremote.authenticate=false
--Dcom.sun.management.jmxremote.ssl=false
+# -Dcom.sun.management.jmxremote
+# -Dcom.sun.management.jmxremote.port=8686
+# -Dcom.sun.management.jmxremote.local.only=false
+# -Dcom.sun.management.jmxremote.authenticate=false
+# -Dcom.sun.management.jmxremote.ssl=false
+
+# Memory options
+-Xms1g
+-Xmx2g

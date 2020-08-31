@@ -32,9 +32,19 @@
         </encoder>
     </appender>
 
+    <appender name="LOGSTASH_AKHQ" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>10.220.12.231:5045</destination>
+        <destination>10.220.12.232:5045</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+          <customFields>{"tags":["prod-akhq-app", "akhq"],"env":"prod","app":"akhq","alias":"akhq"}</customFields>
+        </encoder>
+        <keepAliveDuration>5 minutes</keepAliveDuration>
+    </appender>
+
     <root level="INFO">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="STDERR" />
+        <appender-ref ref="LOGSTASH_AKHQ" />
     </root>
 
     <logger name="org.apache" level="WARN" />

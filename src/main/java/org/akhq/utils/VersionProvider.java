@@ -14,7 +14,7 @@ import java.util.Objects;
 public class VersionProvider {
 
     @Getter
-    private String tag = "Snapshot";
+    private String tag = "LMRU";
 
     @Inject
     Environment environment;
